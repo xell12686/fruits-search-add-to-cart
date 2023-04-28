@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Select from 'react-select';
-import { Fruit } from '../../types';
 import s from './TypeAhead.module.scss';
+import { CartContext } from '../../contexts/CartContext';
+import { Fruit } from '../../types';
 
 interface Option {
   value: number;
@@ -15,11 +16,22 @@ interface TypeAheadProps {
 const TypeAhead = (props: TypeAheadProps) => {
   const [selected, setSelected] = useState<Option | null>(null);
   const [searchOptions, setSearchOptions] = useState<Option[]>([]);
+  const { addToCart } = useContext(CartContext);
 
   const handleOnChange = (selectedOption: Option | null) => {
     setSelected(selectedOption);
     if (selectedOption) {
       console.log(`Selected fruit: ${selectedOption.label} (ID: ${selectedOption.value})`);
+    }
+  };
+
+  const handleAddToCart = () => {
+    if (selected) {
+      const selectedFruit = props.fruits.find((f) => f.id === selected.value);
+      if (selectedFruit) {
+        addToCart(selectedFruit);
+      }
+      setSelected(null);
     }
   };
 
@@ -59,7 +71,9 @@ const TypeAhead = (props: TypeAheadProps) => {
             DropdownIndicator,
           }}
         />
-        <button disabled={!selected}>Add</button>
+        <button onClick={handleAddToCart} disabled={!selected}>
+          Add
+        </button>
       </div>
     </div>
   );

@@ -4,5 +4,6 @@ export interface Fruit {
   family: string;
   order: string;
   genus: string;
+  quantity: number;
 }
 

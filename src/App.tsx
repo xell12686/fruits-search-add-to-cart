@@ -4,6 +4,7 @@ import TypeAhead from "./components/TypeAhead";
 import Cart from "./components/Cart";
 import { Fruit } from "./types";
 import { fetchFruits } from "./api";
+import { CartProvider } from "./contexts/CartContext";
 
 function App() {
   const [fruits, setFruits] = useState<Fruit[]>([]);
@@ -29,4 +30,10 @@ function App() {
   );
 }
 
-export default App;
+export default function AppWrapper() {
+  return (
+    <CartProvider>
+      <App />
+    </CartProvider>
+  );
+}
