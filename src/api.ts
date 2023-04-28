@@ -1,7 +1,7 @@
 import { Fruit } from "./types";
 
 export async function fetchFruits(): Promise<Fruit[]> {
-  const response = await fetch("https://fruityvice.com/api/fruit/all");
+  const response = await fetch("/api/fruit/all");
   const data = await response.json();
   return data.map((item: any) => ({
     name: item.name,
