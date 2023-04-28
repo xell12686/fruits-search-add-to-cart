@@ -6,10 +6,12 @@
   "main": "src/index.js",
   "dependencies": {
     "@types/node-sass": "^4.11.3",
+    "@types/react-select": "^5.0.1",
     "node-sass": "^8.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "react-select": "^5.7.2"
   },
   "devDependencies": {
     "@babel/runtime": "7.13.8",

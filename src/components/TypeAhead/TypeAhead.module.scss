@@ -1,3 +1,48 @@
 .TypeAhead {
-  
+  margin: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #676565;
+
+  .label {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    margin-right: 8px;
+  }
+
+  [class*="-indicatorSeparator"] {
+    display: none;
+  }
+
+}
+
+.inputGroup {
+  display: flex;
+  border-radius: 8px;
+  width: 100%;
+  gap: 20px;
+  > div {
+    flex: 1;
+  }
+  input {
+    font-size: 16px;
+    color: black;
+  }
+  button {
+    background-color: #f4f4f4;
+    color: #676565;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    cursor: pointer;
+    &:hover {
+        background-color: #1061C4;
+        color: white;
+    }
+  }
 }
