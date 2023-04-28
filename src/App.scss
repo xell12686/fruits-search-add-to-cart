@@ -35,6 +35,17 @@ input {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: #FCFCFC;
+}
+
+.header {
+  background: #FFFFFF;
+  height: 84px;
+  width: 100%;
+  box-shadow: inset 0px -1px 0px #F0F0F0;
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .container {

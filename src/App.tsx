@@ -19,6 +19,7 @@ function App() {
 
   return (
     <div className="App">
+      <div className="header"></div>
       <div className="container">
         <h2>Add Products</h2>
         <TypeAhead fruits={fruits} />
