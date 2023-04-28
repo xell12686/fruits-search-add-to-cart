@@ -3,8 +3,14 @@
     justify-content: center;
     align-items: center;
     display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
+.CartItems {
+    @extend .Cart;
+    justify-content: flex-start;
+}
 .noProducts {
     display: flex;
     gap: 16px;

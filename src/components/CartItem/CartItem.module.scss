@@ -1,3 +1,47 @@
-.CarItem {
-  
+.CartItem {
+  background-color: #f4f4f4;
+  width: 100%;
+  background: #ffffff;
+  border: 2px solid #f4f4f4;
+  border-radius: 4px;
+  display: flex;
+  padding: 24px;
+  align-items: center;
+}
+
+.text {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    button {
+        border: none;
+        background: none;
+        color: #4E4E4E;
+        padding: 0;
+        margin: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+        font-weight: 400;
+        font-size: 27px;
+    }
+    .quantity {
+        height: 28px;
+        width: 28px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 28px;
+        text-align: center;
+        background: #F4F4F4;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
