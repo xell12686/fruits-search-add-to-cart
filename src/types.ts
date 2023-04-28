@@ -1,4 +1,8 @@
-declare module "*.scss" {
-  const content: { [className: string]: string };
-  export default content;
+export interface Fruit {
+  name: string;
+  id: number;
+  family: string;
+  order: string;
+  genus: string;
 }
+
