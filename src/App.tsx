@@ -19,9 +19,11 @@ function App() {
 
   return (
     <div className="App">
-      <h2>Add Products</h2>
-      <TypeAhead fruits={fruits} />
-      <Cart />
+      <div className="container">
+        <h2>Add Products</h2>
+        <TypeAhead fruits={fruits} />
+        <Cart />
+      </div>
     </div>
   );
 }

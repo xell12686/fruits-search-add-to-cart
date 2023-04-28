@@ -35,12 +35,17 @@ const TypeAhead = (props: TypeAheadProps) => {
 
   const DropdownIndicator = () => null; // custom component to disable dropdown indicator
 
+  const inputGroupClasses = [s.inputGroup];
+  if (selected) {
+    inputGroupClasses.push(s.selected);
+  }
+
   return (
     <div className={s.TypeAhead}>
       <label className={s.label} htmlFor="typeahead-input">
         Product
       </label>
-      <div className={s.inputGroup}>
+      <div className={inputGroupClasses.join(' ')}>
         <Select
           id="typeahead"
           inputId="typeahead-input" // set inputId to connect label and input
@@ -54,7 +59,7 @@ const TypeAhead = (props: TypeAheadProps) => {
             DropdownIndicator,
           }}
         />
-        <button type="button">Add</button>
+        <button disabled={!selected}>Add</button>
       </div>
     </div>
   );
