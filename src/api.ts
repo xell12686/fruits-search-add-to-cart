@@ -3,8 +3,8 @@ import fallbackData from "./fallback-data.json";
 
 export async function fetchFruits(): Promise<Fruit[]> {
   try {
-    // const response = await fetch("https://fruityvice.com/api/fruit/all", { mode: 'no-cors' });
-    const response = await fetch("https://fruityvice.com/api/fruit/all");
+    const response = await fetch("/api/fruit/all");
+    // const response = await fetch("https://fruityvice.com/api/fruit/all");
     const text = await response.text();
     const data = text ? JSON.parse(text) : [];
     return data.map((item: any) => ({
