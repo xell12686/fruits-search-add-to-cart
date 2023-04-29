@@ -13,9 +13,7 @@ const CartItem = ({ id, quantity }: CartItemProps) => {
   const item = cartItems.find((i) => i.id === id);
 
   const handleDecrement = () => {
-    if (quantity > 1) {
-      updateItemQuantity(id, quantity - 1);
-    }
+    updateItemQuantity(id, quantity - 1);
   };
 
   const handleIncrement = () => {

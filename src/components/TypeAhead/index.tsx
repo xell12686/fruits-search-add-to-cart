@@ -16,22 +16,39 @@ interface TypeAheadProps {
 const TypeAhead = (props: TypeAheadProps) => {
   const [selected, setSelected] = useState<Option | null>(null);
   const [searchOptions, setSearchOptions] = useState<Option[]>([]);
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, updateItemQuantity, cartItems } = useContext(CartContext);
 
   const handleOnChange = (selectedOption: Option | null) => {
-    setSelected(selectedOption);
     if (selectedOption) {
-      console.log(`Selected fruit: ${selectedOption.label} (ID: ${selectedOption.value})`);
+      const selectedFruit = props.fruits.find((f) => f.id === selectedOption.value);
+      if (selectedFruit) {
+        const existingItem = cartItems.find((i) => i.id === selectedFruit.id);
+        if (existingItem) {
+          handleIncrementItem(selectedFruit);
+        } else {
+          addToCart(selectedFruit);
+        }
+      }
     }
+    setSelected(selectedOption);
+  };
+
+  const handleIncrementItem = (selectedItem: Fruit) => {
+    const currentQuantity = cartItems.find((i) => i.id === selectedItem.id)?.quantity ?? 0;
+    updateItemQuantity(selectedItem.id, currentQuantity + 1);
   };
 
   const handleAddToCart = () => {
     if (selected) {
       const selectedFruit = props.fruits.find((f) => f.id === selected.value);
       if (selectedFruit) {
-        addToCart(selectedFruit);
+        const existingItem = cartItems.find((i) => i.id === selectedFruit.id);
+        if (existingItem) {
+          handleIncrementItem(selectedFruit);
+        } else {
+          addToCart(selectedFruit);
+        }
       }
-      setSelected(null);
     }
   };
 
