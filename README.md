@@ -17,16 +17,23 @@
 3. Accessibility
 4. General best practices around component structuring
 
-## For a performant and production-grade implementation, the following was used:
-For a performant and production-grade implementation, consider the following:
-- Use TypeScript and SCSS modules to ensure type safety and better organization of styles.
-- Implement a well-structured API that adheres to industry-standard conventions.
-- Use the Context API for state management to avoid prop drilling and make your code more scalable.
-- Ensure that your implementation follows best practices for security, including input validation, output encoding, and encryption where necessary.
+## For a performant and production-grade implementation:
+- TypeScript and SCSS modules to ensure type safety and better organization of styles.
+- Well-structured API utility file
+- Use the Context API for state management to avoid prop drilling
+- best practices for security, including input validation
 - Implement Test Driven Development (TDD) using Jest to cover use cases for each component (to follow)
 
 ## API Url
 
 https://fruityvice.com/api/fruit/all
+
+## Mockups:
+
+![Project Image](https://github.com/xell12686/fruits-search-add-to-cart/blob/main/preview-cart-empty.png)
+![Project Image](https://github.com/xell12686/fruits-search-add-to-cart/blob/main/preview-cart.png)
+## live preview:
+- app is currently deployed at [https://fruits-search-add-to-cart.vercel.app/](https://fruits-search-add-to-cart.vercel.app/)
+
 
 
