@@ -1,5 +1,5 @@
 import { Fruit } from "./types";
-import fallbackData from "./fallback-data.json";
+// import fallbackData from "./fallback-data.json";
 
 export async function fetchFruits(): Promise<Fruit[]> {
   try {
@@ -15,9 +15,7 @@ export async function fetchFruits(): Promise<Fruit[]> {
       genus: item.genus,
     }));
   } catch (error) {
-    console.log("Error fetching fruits:", error);
-    return fallbackData;
+    alert("Error fetching list of products. Please check your internet connection and try again.");
+    return [] as Fruit[];
   }
 }
-
-
